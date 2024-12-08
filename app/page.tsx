@@ -23,7 +23,6 @@ export default function Home() {
   return (
     <main className="container mx-auto py-4 sm:py-8 px-4">
       <h1 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-center">Form Builder</h1>
-      
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
         <div className="order-1 lg:order-none">
           <JsonEditor onValidJson={handleValidJson} />
@@ -41,7 +40,7 @@ export default function Home() {
                 Code
               </TabsTrigger>
             </TabsList>
-            
+
             <TabsContent value="preview">
               <div className="min-h-[400px] p-2 sm:p-4 border rounded-lg">
                 {formConfig ? (
@@ -53,7 +52,7 @@ export default function Home() {
                 )}
               </div>
             </TabsContent>
-            
+
             <TabsContent value="code">
               <CodePreview code={generatedCode} />
             </TabsContent>

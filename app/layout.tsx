@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | Form Builder'
   },
   description: 'Create dynamic forms easily with our JSON-powered form builder. Generate React forms with validation, live preview, and code generation.',
-  keywords: ['form builder', 'json form generator', 'react forms', 'dynamic forms', 'form validation', 'nextjs forms' , 'shadcn'],
+  keywords: ['form builder', 'json form generator', 'react forms', 'dynamic forms', 'form validation', 'nextjs forms', 'shadcn'],
   authors: [{ name: 'Form Builder Team' }],
   creator: 'Form Builder Team',
   publisher: 'Form Builder',
@@ -63,11 +63,6 @@ export const metadata: Metadata = {
     },
   },
   manifest: '/site.webmanifest',
-  verification: {
-    google: '',
-    yandex: '',
-    bing: '',
-  },
 };
 
 export default function RootLayout({

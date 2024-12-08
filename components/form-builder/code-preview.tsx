@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
 import { useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
 
 interface CodePreviewProps {
   code: string;
@@ -19,7 +18,7 @@ export function CodePreview({ code }: CodePreviewProps) {
       await import('prismjs/components/prism-typescript');
       await import('prismjs/components/prism-jsx');
       await import('prismjs/components/prism-tsx');
-      
+
       if (codeRef.current) {
         Prism.highlightElement(codeRef.current);
       }

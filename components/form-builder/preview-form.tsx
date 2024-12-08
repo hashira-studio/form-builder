@@ -22,13 +22,13 @@ const widthClasses = {
   full: "col-span-12",
   half: "col-span-12 sm:col-span-6",
   third: "col-span-12 sm:col-span-4"
-};
+} as const;
 
 export function PreviewForm({ config }: PreviewFormProps) {
   const { fields, layout } = config;
 
   const formSchema = z.object(
-    fields.reduce((acc, field) => {
+    fields.reduce<z.ZodRawShape>((acc, field) => {
       let validation = z.string();
       if (field.required) validation = validation.min(1, "Required");
       if (field.validation?.min) validation = validation.min(field.validation.min);
@@ -38,17 +38,19 @@ export function PreviewForm({ config }: PreviewFormProps) {
     }, {})
   );
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  type FormValues = z.infer<typeof formSchema>;
+
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: FormValues) {
     console.log(values);
   }
 
   const renderField = (field: IFormField) => {
     const isInline = layout === "inline";
-    
+
     return (
       <div key={field.name} className={cn(
         isInline && widthClasses[field.width],
