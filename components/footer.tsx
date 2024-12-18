@@ -13,7 +13,7 @@ export function Footer() {
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             Built with <Heart className="inline-block h-4 w-4 text-red-500" /> by{" "}
             <a
-              href="https://hashirastudio.com"
+              href="https://hashira.studio"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4 hover:text-primary"
@@ -28,7 +28,7 @@ export function Footer() {
             variant="outline"
             size="sm"
             className="h-9"
-            onClick={() => window.open("https://github.com/hashirastudio/form-builder", "_blank")}
+            onClick={() => window.open("https://github.com/hashira-studio/form-builder", "_blank")}
           >
             <Github className="mr-2 h-4 w-4" />
             Support on GitHub
